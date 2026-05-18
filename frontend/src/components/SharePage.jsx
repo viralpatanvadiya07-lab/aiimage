@@ -130,18 +130,18 @@ export default function SharePage() {
           </h1>
 
           {/* Action Buttons */}
-          <div className="flex flex-wrap gap-4 justify-center mt-4">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mt-4 w-full sm:w-auto">
             <button 
               onClick={handleDownload}
-              className="btn-premium px-8 py-4 rounded-xl text-white font-bold transition shadow-lg shadow-purple-500/30 flex items-center gap-2 transform hover:scale-105 active:scale-95 border border-white/20"
+              className="btn-premium w-full sm:w-auto px-6 py-3.5 sm:px-8 sm:py-4 rounded-xl text-white font-bold transition shadow-lg shadow-purple-500/30 flex items-center justify-center gap-2 transform hover:scale-105 active:scale-95 border border-white/20 cursor-pointer text-sm sm:text-base"
             >
-              <Download size={20} /> Download Image
+              <Download size={18} className="sm:w-5 sm:h-5" /> Download Image
             </button>
             <button 
               onClick={handleCopyLink}
-              className="btn-secondary px-8 py-4 rounded-xl text-white font-bold transition shadow-lg flex items-center gap-2 transform hover:scale-105 active:scale-95 border border-purple-800"
+              className="btn-secondary w-full sm:w-auto px-6 py-3.5 sm:px-8 sm:py-4 rounded-xl text-white font-bold transition shadow-lg flex items-center justify-center gap-2 transform hover:scale-105 active:scale-95 border border-purple-800 cursor-pointer text-sm sm:text-base"
             >
-              <Share2 size={20} /> Copy Link
+              <Share2 size={18} className="sm:w-5 sm:h-5" /> Copy Link
             </button>
           </div>
         </div>

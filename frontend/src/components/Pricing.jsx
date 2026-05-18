@@ -202,7 +202,7 @@ export default function Pricing() {
               className={`
                 relative rounded-3xl p-8 border transition-all duration-300 hover:-translate-y-2 backdrop-blur-xl
                 ${plan.popular
-                  ? `bg-gradient-to-b from-purple-950/60 to-[#090710] border-pink-500/60 shadow-2xl ${plan.glow} scale-105`
+                  ? `bg-gradient-to-b from-purple-950/60 to-[#090710] border-pink-500/60 shadow-2xl ${plan.glow} md:scale-105`
                   : `bg-purple-950/20 ${plan.border} shadow-lg hover:shadow-2xl hover:${plan.glow}`
                 }
               `}

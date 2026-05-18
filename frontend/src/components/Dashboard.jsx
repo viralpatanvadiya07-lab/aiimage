@@ -188,22 +188,22 @@ export default function Dashboard() {
       </div>
 
       {/* Main Studio Area - Generation (Span 8) */}
-      <div className="lg:col-span-8 flex flex-col min-h-[650px] space-y-6">
+      <div className="lg:col-span-8 flex flex-col min-h-[500px] sm:min-h-[650px] space-y-6">
         {/* Output Window */}
-        <div className="flex-1 glass-panel border border-purple-800/50 rounded-3xl overflow-hidden relative flex items-center justify-center shadow-2xl bg-purple-950/20 backdrop-blur-2xl group min-h-[450px]">
+        <div className="flex-1 glass-panel border border-purple-800/50 rounded-3xl overflow-hidden relative flex flex-col items-center justify-center shadow-2xl bg-purple-950/20 backdrop-blur-2xl group min-h-[350px] sm:min-h-[450px]">
           
           {(isGenerating || isImageLoading) && (
-            <div className="absolute inset-0 z-20 flex flex-col items-center justify-center gap-6 bg-[#090710]/90 backdrop-blur-md transition-all">
+            <div className="absolute inset-0 z-20 flex flex-col items-center justify-center gap-6 bg-[#090710]/95 backdrop-blur-md transition-all">
               {/* Outer pulsing ring */}
-              <div className="relative w-28 h-28 flex items-center justify-center">
+              <div className="relative w-20 h-20 sm:w-28 sm:h-28 flex items-center justify-center">
                 <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-purple-500 via-fuchsia-500 to-pink-500 animate-spin blur-md opacity-70"></div>
                 <div className="absolute inset-1 rounded-full bg-[#090710] flex items-center justify-center">
-                  <Loader2 className="w-12 h-12 text-pink-400 animate-spin" />
+                  <Loader2 className="w-8 h-8 sm:w-12 sm:h-12 text-pink-400 animate-spin" />
                 </div>
               </div>
-              <div className="text-center">
-                <h3 className="text-xl font-extrabold text-white mb-1 animate-pulse">Synthesizing Neural Art...</h3>
-                <p className="text-xs text-pink-400/80 font-mono">
+              <div className="text-center px-4">
+                <h3 className="text-lg sm:text-xl font-extrabold text-white mb-1 animate-pulse">Synthesizing Neural Art...</h3>
+                <p className="text-[10px] sm:text-xs text-pink-400/80 font-mono">
                   {isImageLoading ? "Applying final upscaling & color grading..." : "Running Flux Realism diffusion passes..."}
                 </p>
               </div>
@@ -211,11 +211,11 @@ export default function Dashboard() {
           )}
 
           {generatedImage ? (
-            <div className="relative w-full h-full p-4 md:p-8 flex items-center justify-center">
+            <div className="relative w-full h-full p-4 sm:p-8 flex flex-col items-center justify-center">
               <img 
                 src={generatedImage} 
                 alt="Generated Art" 
-                className={`max-w-full max-h-[550px] object-contain rounded-2xl shadow-2xl border border-white/10 transition-all duration-700 transform ${isImageLoading ? 'opacity-0 scale-95' : 'opacity-100 scale-100'}`}
+                className={`max-w-full max-h-[300px] sm:max-h-[550px] object-contain rounded-2xl shadow-2xl border border-white/10 transition-all duration-700 transform ${isImageLoading ? 'opacity-0 scale-95' : 'opacity-100 scale-100'}`}
                 onLoad={() => setIsImageLoading(false)}
                 onError={() => {
                   setIsImageLoading(false);
@@ -224,30 +224,33 @@ export default function Dashboard() {
                 }}
               />
               {!isImageLoading && (
-                <div className="absolute inset-0 bg-[#090710]/70 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center gap-4 rounded-3xl m-2">
-                  <button 
-                    onClick={handleDownload} 
-                    className="btn-premium px-6 py-3 text-white font-bold rounded-xl shadow-xl flex items-center gap-2 border border-white/20"
-                  >
-                    <Download size={18} /> Download HD
-                  </button>
-                  <button 
-                    onClick={handleShare} 
-                    className="btn-secondary px-6 py-3 text-white font-bold rounded-xl shadow-xl flex items-center gap-2 border border-purple-800"
-                  >
-                    <Share2 size={18} /> Share Showcase
-                  </button>
-                </div>
+                <>
+                  {/* Desktop Hover Overlay */}
+                  <div className="absolute inset-0 bg-[#090710]/70 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-all duration-300 hidden md:flex items-center justify-center gap-4 rounded-3xl m-2">
+                    <button 
+                      onClick={handleDownload} 
+                      className="btn-premium px-6 py-3 text-white font-bold rounded-xl shadow-xl flex items-center gap-2 border border-white/20 cursor-pointer"
+                    >
+                      <Download size={18} /> Download HD
+                    </button>
+                    <button 
+                      onClick={handleShare} 
+                      className="btn-secondary px-6 py-3 text-white font-bold rounded-xl shadow-xl flex items-center gap-2 border border-purple-800 cursor-pointer"
+                    >
+                      <Share2 size={18} /> Share Showcase
+                    </button>
+                  </div>
+                </>
               )}
             </div>
           ) : !isGenerating && (
-            <div className="text-center text-purple-300/50 flex flex-col items-center gap-4 p-8 max-w-md">
-              <div className="w-24 h-24 rounded-3xl bg-purple-950/40 flex items-center justify-center border border-purple-800/40 shadow-inner group-hover:scale-105 transition-transform">
-                <ImageIcon className="w-12 h-12 text-purple-400/60 group-hover:text-pink-400 transition-colors" />
+            <div className="text-center text-purple-300/50 flex flex-col items-center gap-4 p-6 sm:p-8 max-w-md">
+              <div className="w-16 h-16 sm:w-24 sm:h-24 rounded-2xl sm:rounded-3xl bg-purple-950/40 flex items-center justify-center border border-purple-800/40 shadow-inner group-hover:scale-105 transition-transform">
+                <ImageIcon className="w-8 h-8 sm:w-12 sm:h-12 text-purple-400/60 group-hover:text-pink-400 transition-colors" />
               </div>
               <div>
-                <h3 className="text-lg font-bold text-purple-200 mb-1">Canvas is Empty</h3>
-                <p className="text-xs text-purple-300/60 leading-relaxed font-light">
+                <h3 className="text-base sm:text-lg font-bold text-purple-200 mb-1">Canvas is Empty</h3>
+                <p className="text-[11px] sm:text-xs text-purple-300/60 leading-relaxed font-light">
                   Type your prompt in the neural input bar below and hit generate to bring your wildest imagination to life.
                 </p>
               </div>
@@ -255,22 +258,40 @@ export default function Dashboard() {
           )}
         </div>
 
+        {/* Mobile-Only Action Buttons for Generated Image */}
+        {generatedImage && !isImageLoading && (
+          <div className="flex md:hidden gap-3 w-full px-1">
+            <button 
+              onClick={handleDownload} 
+              className="btn-premium flex-1 py-3 text-sm font-extrabold text-white rounded-xl shadow-lg flex items-center justify-center gap-1.5 border border-white/10"
+            >
+              <Download size={16} /> Download
+            </button>
+            <button 
+              onClick={handleShare} 
+              className="btn-secondary flex-1 py-3 text-sm font-bold text-purple-200 rounded-xl shadow-lg flex items-center justify-center gap-1.5 border border-purple-800/50"
+            >
+              <Share2 size={16} /> Share
+            </button>
+          </div>
+        )}
+
         {/* Input Bar */}
         <form onSubmit={handleGenerate} className="relative mt-auto">
           <input 
             type="text" 
             value={prompt}
             onChange={(e) => setPrompt(e.target.value)}
-            placeholder="Describe your masterpiece (e.g., A futuristic city with flying cars, cyberpunk style)..."
-            className="w-full bg-[#090710]/90 text-white border border-purple-800/80 rounded-3xl py-6 pl-8 pr-32 font-medium focus:outline-none focus:border-pink-500 focus:ring-2 focus:ring-pink-500/20 shadow-2xl backdrop-blur-xl transition text-base sm:text-lg placeholder:text-purple-300/40"
+            placeholder="Describe your masterpiece..."
+            className="w-full bg-[#090710]/95 text-white border border-purple-800/80 rounded-3xl py-4.5 sm:py-6 pl-5 sm:pl-8 pr-16 sm:pr-36 font-medium focus:outline-none focus:border-pink-500 focus:ring-2 focus:ring-pink-500/20 shadow-2xl backdrop-blur-xl transition text-sm sm:text-base placeholder:text-purple-300/40"
             disabled={isGenerating}
           />
           <button 
             type="submit" 
             disabled={isGenerating || !prompt.trim() || credits <= 0}
-            className="btn-premium absolute right-3 top-1/2 -translate-y-1/2 px-6 py-4 disabled:bg-purple-950 disabled:text-purple-500 disabled:border-purple-900 disabled:cursor-not-allowed rounded-2xl font-bold text-white shadow-lg shadow-purple-500/30 flex items-center gap-2 border border-white/20"
+            className="btn-premium absolute right-2 sm:right-3 top-1/2 -translate-y-1/2 px-3 sm:px-6 py-2.5 sm:py-4 disabled:bg-purple-950 disabled:text-purple-500 disabled:border-purple-900 disabled:cursor-not-allowed rounded-2xl font-bold text-white shadow-lg shadow-purple-500/30 flex items-center gap-2 border border-white/20 cursor-pointer"
           >
-            <span className="hidden sm:inline">Synthesize</span> <Send size={20} />
+            <span className="hidden sm:inline text-sm">Synthesize</span> <Send size={16} className="sm:w-5 sm:h-5" />
           </button>
         </form>
       </div>

@@ -217,6 +217,30 @@ app.get('/api/gallery', verifyToken, async (req, res) => {
 });
 
 // =======================
+// ADMIN ROUTES
+// =======================
+
+app.get('/api/admin/users', verifyToken, async (req, res) => {
+  try {
+    const adminEmail = process.env.ADMIN_EMAIL || 'viralpatanvadiya07@gmail.com';
+    
+    // Check if requester is admin
+    const requester = await User.findById(req.user.id);
+    if (!requester || requester.email !== adminEmail) {
+      return res.status(403).json({ error: 'Access denied. Admins only.' });
+    }
+
+    // Fetch all users
+    const users = await User.find().select('-password').sort({ createdAt: -1 });
+    res.json(users);
+  } catch (error) {
+    console.error("Admin Users Error:", error);
+    res.status(500).json({ error: 'Server error fetching users' });
+  }
+});
+
+
+// =======================
 // PUBLIC SHARE ROUTE (Showcase Page)
 // =======================
 

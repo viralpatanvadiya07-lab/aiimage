@@ -143,7 +143,7 @@ export default function Gallery() {
                 />
                 
                 {/* Overlay Controls */}
-                <div className="absolute inset-0 bg-gradient-to-t from-[#090710]/90 via-[#090710]/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-between p-6">
+                <div className="absolute inset-0 bg-gradient-to-t from-[#090710]/90 via-[#090710]/30 to-transparent opacity-0 sm:group-hover:opacity-100 transition-opacity duration-300 hidden sm:flex flex-col justify-between p-6">
                   {/* Top badges */}
                   <div className="flex gap-2 justify-end">
                     <span className="px-3 py-1 rounded-full bg-black/60 backdrop-blur-md text-pink-300 text-xs font-semibold border border-pink-500/30">
@@ -158,14 +158,14 @@ export default function Gallery() {
                   <div className="flex gap-3 justify-end">
                     <button 
                       onClick={() => handleDownload(img.imageUrl, img.prompt)}
-                      className="btn-premium p-3 rounded-xl text-white shadow-lg flex items-center gap-2 text-sm font-bold border border-white/20"
+                      className="btn-premium p-3 rounded-xl text-white shadow-lg flex items-center gap-2 text-sm font-bold border border-white/20 cursor-pointer"
                       title="Download Image"
                     >
                       <Download size={18} /> Download
                     </button>
                     <button 
                       onClick={() => handleShare(img._id)}
-                      className="btn-secondary p-3 rounded-xl text-white shadow-lg flex items-center gap-2 text-sm font-bold border border-purple-800"
+                      className="btn-secondary p-3 rounded-xl text-white shadow-lg flex items-center gap-2 text-sm font-bold border border-purple-800 cursor-pointer"
                       title="Copy URL"
                     >
                       <Share2 size={18} /> Share
@@ -179,6 +179,23 @@ export default function Gallery() {
                 <p className="text-purple-100 text-sm line-clamp-3 font-medium leading-relaxed mb-4">
                   "{img.prompt}"
                 </p>
+
+                {/* Mobile action buttons */}
+                <div className="flex sm:hidden gap-3 mb-4 w-full">
+                   <button 
+                     onClick={() => handleDownload(img.imageUrl, img.prompt)}
+                     className="btn-premium flex-1 py-2.5 rounded-xl text-white text-xs font-bold border border-white/10 flex items-center justify-center gap-1.5 cursor-pointer"
+                   >
+                     <Download size={14} /> Download
+                   </button>
+                   <button 
+                     onClick={() => handleShare(img._id)}
+                     className="btn-secondary flex-1 py-2.5 rounded-xl text-white text-xs font-bold border border-purple-800 flex items-center justify-center gap-1.5 cursor-pointer"
+                   >
+                     <Share2 size={14} /> Share
+                   </button>
+                </div>
+
                 <div className="flex items-center justify-between text-xs text-purple-300/60 border-t border-purple-900/40 pt-4 mt-auto font-medium">
                   <span>Created</span>
                   <span>{new Date(img.createdAt).toLocaleDateString(undefined, { month: 'short', day: 'numeric', year: 'numeric' })}</span>
