@@ -94,50 +94,50 @@ function App() {
 
             {/* Mobile Drawer (Slide Down) */}
             {isMenuOpen && (
-              <div className="absolute top-[calc(100%+12px)] left-0 right-0 p-6 rounded-2xl border border-purple-500/25 bg-[#120c1f] shadow-2xl flex flex-col gap-4 z-[999] xl:hidden animate-fade-in">
+              <div className="absolute top-[calc(100%+8px)] left-0 right-0 p-4 rounded-xl border border-purple-500/25 bg-[#120c1f] shadow-2xl flex flex-col gap-2.5 z-[999] xl:hidden animate-fade-in">
                 {user ? (
                   <>
-                    <div className="flex items-center justify-between border-b border-purple-900/50 pb-3 mb-1">
-                      <span className="text-sm font-medium text-purple-300">Welcome back</span>
-                      <span className="text-sm font-extrabold text-pink-400 bg-pink-500/10 px-3 py-1 rounded-lg border border-pink-500/20 flex items-center gap-1">
-                        <Sparkles size={14} /> {user.credits} Credits
+                    <div className="flex items-center justify-between border-b border-purple-900/50 pb-2 mb-0.5">
+                      <span className="text-xs font-medium text-purple-300">Welcome back</span>
+                      <span className="text-xs font-extrabold text-pink-400 bg-pink-500/10 px-2.5 py-0.5 rounded-md border border-pink-500/20 flex items-center gap-1">
+                        <Sparkles size={12} /> {user.credits} Credits
                       </span>
                     </div>
                     <Link 
                       to="/dashboard" 
                       onClick={closeMenu} 
-                      className="btn-premium px-5 py-3.5 rounded-xl text-base font-extrabold text-white flex items-center justify-center gap-2 border border-white/20 w-full"
+                      className="btn-premium px-4 py-2 rounded-lg text-xs font-extrabold text-white flex items-center justify-center gap-1.5 border border-white/20 w-full"
                     >
-                      <LayoutDashboard size={18} /> Studio Dashboard
+                      <LayoutDashboard size={14} /> Studio Dashboard
                     </Link>
                     <Link 
                       to="/gallery" 
                       onClick={closeMenu} 
-                      className="btn-secondary px-5 py-3.5 rounded-xl text-base font-bold text-white flex items-center justify-center gap-2 border border-purple-800/50 w-full"
+                      className="btn-secondary px-4 py-2 rounded-lg text-xs font-bold text-white flex items-center justify-center gap-1.5 border border-purple-800/50 w-full"
                     >
-                      <ImageIcon size={18} className="text-pink-400" /> My Gallery
+                      <ImageIcon size={14} className="text-pink-400" /> My Gallery
                     </Link>
                     <Link 
                       to="/pricing" 
                       onClick={closeMenu} 
-                      className="btn-secondary px-5 py-3.5 rounded-xl text-base font-bold text-white flex items-center justify-center gap-2 border border-purple-800/50 w-full"
+                      className="btn-secondary px-4 py-2 rounded-lg text-xs font-bold text-white flex items-center justify-center gap-1.5 border border-purple-800/50 w-full"
                     >
-                      <Zap size={18} className="text-amber-400 animate-pulse" /> Buy Credits
+                      <Zap size={14} className="text-amber-400 animate-pulse" /> Buy Credits
                     </Link>
                     {user.email === "viralpatanvadiya07@gmail.com" && (
                       <Link 
                         to="/admin" 
                         onClick={closeMenu} 
-                        className="btn-secondary px-5 py-3.5 rounded-xl text-base font-bold text-pink-400 flex items-center justify-center gap-2 border border-pink-500/50 w-full"
+                        className="btn-secondary px-4 py-2 rounded-lg text-xs font-bold text-pink-400 flex items-center justify-center gap-1.5 border border-pink-500/50 w-full"
                       >
-                        <ShieldAlert size={18} /> Admin Panel
+                        <ShieldAlert size={14} /> Admin Panel
                       </Link>
                     )}
                     <button 
                       onClick={() => { logout(); closeMenu(); }} 
-                      className="btn-secondary px-5 py-3.5 rounded-xl text-base font-bold text-rose-300 border border-rose-500/30 flex items-center justify-center gap-2 w-full mt-2 cursor-pointer"
+                      className="btn-secondary px-4 py-2 rounded-lg text-xs font-bold text-rose-300 border border-rose-500/30 flex items-center justify-center gap-1.5 w-full mt-1 cursor-pointer"
                     >
-                      <LogOut size={18} /> Logout
+                      <LogOut size={14} /> Logout
                     </button>
                   </>
                 ) : (
@@ -145,14 +145,14 @@ function App() {
                     <Link 
                       to="/login" 
                       onClick={closeMenu} 
-                      className="btn-secondary px-5 py-3.5 rounded-xl text-base font-bold text-white flex items-center justify-center gap-2 border border-purple-800/50 w-full bg-purple-950/60"
+                      className="btn-secondary px-4 py-2 rounded-lg text-xs font-bold text-white flex items-center justify-center gap-1.5 border border-purple-800/50 w-full bg-purple-950/60"
                     >
                       Login
                     </Link>
                     <Link 
                       to="/signup" 
                       onClick={closeMenu} 
-                      className="btn-premium px-5 py-3.5 rounded-xl text-base font-extrabold text-white flex items-center justify-center gap-2 border border-white/20 w-full"
+                      className="btn-premium px-4 py-2 rounded-lg text-xs font-extrabold text-white flex items-center justify-center gap-1.5 border border-white/20 w-full"
                     >
                       Sign Up
                     </Link>
