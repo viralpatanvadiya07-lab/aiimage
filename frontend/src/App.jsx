@@ -30,7 +30,7 @@ function App() {
           <div className="orb-3 z-0"></div>
 
         {/* Floating Glass Navbar */}
-        <div className="pt-3 sm:pt-4 px-6 sm:px-8 max-w-6xl w-full mx-auto sticky top-0 z-50">
+        <div className="pt-3 sm:pt-4 px-6 sm:px-8 max-w-4xl w-full mx-auto sticky top-0 z-50">
           <nav className="glass-nav w-full flex justify-between items-center gap-6 px-3.5 sm:px-6 py-1.5 sm:py-2 rounded-2xl shadow-2xl transition-all duration-300 border border-purple-500/20 backdrop-blur-xl bg-[#120c1f]/90 relative">
             <Link to="/" onClick={closeMenu} className="text-lg sm:text-2xl font-extrabold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-fuchsia-400 to-pink-400 hover:opacity-90 transition flex items-center gap-1.5 sm:gap-2.5 flex-shrink-0">
               <span className="w-7 h-7 sm:w-9 sm:h-9 rounded-xl bg-gradient-to-tr from-purple-600 to-pink-600 flex items-center justify-center text-white text-xs sm:text-base font-black shadow-lg shadow-purple-500/40 border border-purple-400/30">AI</span>
@@ -38,37 +38,37 @@ function App() {
             </Link>
 
             {/* Desktop Navigation Links */}
-            <div className="hidden xl:flex gap-3 md:gap-4 items-center">
+            <div className="hidden xl:flex gap-2.5 md:gap-3 items-center">
               {user ? (
                 <>
-                  <span className="text-sm text-purple-200 font-medium bg-purple-950/60 px-4 py-2 rounded-xl border border-purple-800/60 backdrop-blur-md flex items-center gap-2 shadow-inner">
-                    <span className="w-2 h-2 rounded-full bg-pink-500 animate-pulse shadow-lg shadow-pink-500"></span>
+                  <span className="text-xs text-purple-200 font-medium bg-purple-950/60 px-3 py-1.5 rounded-lg border border-purple-800/60 backdrop-blur-md flex items-center gap-1.5 shadow-inner">
+                    <span className="w-1.5 h-1.5 rounded-full bg-pink-500 animate-pulse shadow-lg shadow-pink-500"></span>
                     Credits: <strong className="text-white font-extrabold">{user.credits}</strong>
                   </span>
-                  <Link to="/pricing" className="btn-premium px-4.5 py-2 rounded-xl text-sm font-extrabold text-white flex items-center gap-1.5 shadow-lg shadow-purple-500/30 border border-white/20">
+                  <Link to="/pricing" className="btn-premium px-3.5 py-1.5 rounded-lg text-xs font-extrabold text-white flex items-center gap-1 shadow-lg shadow-purple-500/30 border border-white/20">
                     Buy Credits
                   </Link>
                   {user.email === "viralpatanvadiya07@gmail.com" && (
-                    <Link to="/admin" className="btn-secondary px-4.5 py-2 rounded-xl text-sm font-bold text-pink-400 hover:text-white border border-pink-500/50">
+                    <Link to="/admin" className="btn-secondary px-3.5 py-1.5 rounded-lg text-xs font-bold text-pink-400 hover:text-white border border-pink-500/50">
                       Admin
                     </Link>
                   )}
-                  <Link to="/gallery" className="btn-secondary px-4.5 py-2 rounded-xl text-sm font-bold text-purple-200 hover:text-white border border-purple-800/50">
+                  <Link to="/gallery" className="btn-secondary px-3.5 py-1.5 rounded-lg text-xs font-bold text-purple-200 hover:text-white border border-purple-800/50">
                     Gallery
                   </Link>
-                  <Link to="/dashboard" className="btn-premium px-4.5 py-2 rounded-xl text-sm font-extrabold text-white shadow-lg shadow-purple-500/25 border border-white/20">
+                  <Link to="/dashboard" className="btn-premium px-3.5 py-1.5 rounded-lg text-xs font-extrabold text-white shadow-lg shadow-purple-500/25 border border-white/20">
                     Dashboard
                   </Link>
-                  <button onClick={logout} className="btn-secondary px-4.5 py-2 rounded-xl text-sm font-bold text-rose-300 border border-rose-500/30 hover:border-rose-500 hover:text-white cursor-pointer">
+                  <button onClick={logout} className="btn-secondary px-3.5 py-1.5 rounded-lg text-xs font-bold text-rose-300 border border-rose-500/30 hover:border-rose-500 hover:text-white cursor-pointer">
                     Logout
                   </button>
                 </>
               ) : (
                 <>
-                  <Link to="/login" className="btn-secondary px-5 py-2 rounded-xl text-sm font-bold text-purple-200 hover:text-white border border-purple-800/50">
+                  <Link to="/login" className="btn-secondary px-4 py-1.5 rounded-lg text-xs font-bold text-purple-200 hover:text-white border border-purple-800/50">
                     Login
                   </Link>
-                  <Link to="/signup" className="btn-premium px-5 py-2 rounded-xl text-sm font-extrabold text-white shadow-lg shadow-purple-500/30 border border-white/20">
+                  <Link to="/signup" className="btn-premium px-4 py-1.5 rounded-lg text-xs font-extrabold text-white shadow-lg shadow-purple-500/30 border border-white/20">
                     Sign Up
                   </Link>
                 </>
