@@ -38,7 +38,7 @@ function App() {
             </Link>
 
             {/* Desktop Navigation Links */}
-            <div className="hidden lg:flex gap-3 md:gap-4 items-center">
+            <div className="hidden xl:flex gap-3 md:gap-4 items-center">
               {user ? (
                 <>
                   <span className="text-sm text-purple-200 font-medium bg-purple-950/60 px-4 py-2 rounded-xl border border-purple-800/60 backdrop-blur-md flex items-center gap-2 shadow-inner">
@@ -76,7 +76,7 @@ function App() {
             </div>
 
             {/* Mobile Hamburger Button */}
-            <div className="flex lg:hidden items-center gap-3">
+            <div className="flex xl:hidden items-center gap-3">
               {user && (
                 <span className="text-[11px] sm:text-xs text-purple-200 font-bold bg-purple-950/60 px-2.5 py-1 rounded-xl border border-purple-800/60 backdrop-blur-md flex items-center gap-1 shadow-inner">
                   <span className="w-1 h-1 sm:w-1.5 sm:h-1.5 rounded-full bg-pink-500 animate-pulse"></span>
@@ -94,7 +94,7 @@ function App() {
 
             {/* Mobile Drawer (Slide Down) */}
             {isMenuOpen && (
-              <div className="absolute top-[calc(100%+12px)] left-0 right-0 p-6 rounded-2xl border border-purple-500/25 bg-[#120c1f] shadow-2xl flex flex-col gap-4 z-[999] lg:hidden animate-fade-in">
+              <div className="absolute top-[calc(100%+12px)] left-0 right-0 p-6 rounded-2xl border border-purple-500/25 bg-[#120c1f] shadow-2xl flex flex-col gap-4 z-[999] xl:hidden animate-fade-in">
                 {user ? (
                   <>
                     <div className="flex items-center justify-between border-b border-purple-900/50 pb-3 mb-1">
