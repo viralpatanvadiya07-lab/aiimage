@@ -30,10 +30,10 @@ function App() {
           <div className="orb-3 z-0"></div>
 
         {/* Floating Glass Navbar */}
-        <div className="pt-3 sm:pt-4 px-4 max-w-7xl w-full mx-auto sticky top-0 z-50">
-          <nav className="glass-nav w-full flex justify-between items-center gap-6 px-4 sm:px-6 py-2 sm:py-2.5 rounded-2xl shadow-2xl transition-all duration-300 border border-purple-500/20 backdrop-blur-xl bg-[#120c1f]/90 relative">
-            <Link to="/" onClick={closeMenu} className="text-xl sm:text-2xl font-extrabold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-fuchsia-400 to-pink-400 hover:opacity-90 transition flex items-center gap-2 sm:gap-2.5 flex-shrink-0">
-              <span className="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-gradient-to-tr from-purple-600 to-pink-600 flex items-center justify-center text-white text-sm sm:text-base font-black shadow-lg shadow-purple-500/40 border border-purple-400/30">AI</span>
+        <div className="pt-3 sm:pt-4 px-6 sm:px-8 max-w-6xl w-full mx-auto sticky top-0 z-50">
+          <nav className="glass-nav w-full flex justify-between items-center gap-6 px-3.5 sm:px-6 py-1.5 sm:py-2 rounded-2xl shadow-2xl transition-all duration-300 border border-purple-500/20 backdrop-blur-xl bg-[#120c1f]/90 relative">
+            <Link to="/" onClick={closeMenu} className="text-lg sm:text-2xl font-extrabold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-fuchsia-400 to-pink-400 hover:opacity-90 transition flex items-center gap-1.5 sm:gap-2.5 flex-shrink-0">
+              <span className="w-7 h-7 sm:w-9 sm:h-9 rounded-xl bg-gradient-to-tr from-purple-600 to-pink-600 flex items-center justify-center text-white text-xs sm:text-base font-black shadow-lg shadow-purple-500/40 border border-purple-400/30">AI</span>
               AI Gen
             </Link>
 
@@ -78,17 +78,17 @@ function App() {
             {/* Mobile Hamburger Button */}
             <div className="flex lg:hidden items-center gap-3">
               {user && (
-                <span className="text-xs text-purple-200 font-bold bg-purple-950/60 px-3 py-1.5 rounded-xl border border-purple-800/60 backdrop-blur-md flex items-center gap-1.5 shadow-inner">
-                  <span className="w-1.5 h-1.5 rounded-full bg-pink-500 animate-pulse"></span>
+                <span className="text-[11px] sm:text-xs text-purple-200 font-bold bg-purple-950/60 px-2.5 py-1 rounded-xl border border-purple-800/60 backdrop-blur-md flex items-center gap-1 shadow-inner">
+                  <span className="w-1 h-1 sm:w-1.5 sm:h-1.5 rounded-full bg-pink-500 animate-pulse"></span>
                   Credits: <strong className="text-white font-extrabold">{user.credits}</strong>
                 </span>
               )}
               <button 
                 onClick={toggleMenu} 
-                className="p-1.5 sm:p-2 rounded-xl border border-purple-500/30 bg-purple-950/40 text-purple-300 hover:text-white focus:outline-none"
+                className="p-1 sm:p-1.5 rounded-lg sm:rounded-xl border border-purple-500/30 bg-purple-950/40 text-purple-300 hover:text-white focus:outline-none"
                 aria-label="Toggle Menu"
               >
-                {isMenuOpen ? <X size={20} /> : <Menu size={20} />}
+                {isMenuOpen ? <X size={16} /> : <Menu size={16} />}
               </button>
             </div>
 
