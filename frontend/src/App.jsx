@@ -94,7 +94,7 @@ function App() {
 
             {/* Mobile Drawer (Slide Down) */}
             {isMenuOpen && (
-              <div className="absolute top-[calc(100%+12px)] left-0 right-0 glass-nav p-6 rounded-2xl border border-purple-500/20 bg-[#120c1f]/95 shadow-2xl flex flex-col gap-4 z-50 lg:hidden animate-fade-in">
+              <div className="absolute top-[calc(100%+12px)] left-0 right-0 p-6 rounded-2xl border border-purple-500/25 bg-[#120c1f] shadow-2xl flex flex-col gap-4 z-[999] lg:hidden animate-fade-in">
                 {user ? (
                   <>
                     <div className="flex items-center justify-between border-b border-purple-900/50 pb-3 mb-1">
@@ -113,14 +113,14 @@ function App() {
                     <Link 
                       to="/gallery" 
                       onClick={closeMenu} 
-                      className="btn-secondary px-5 py-3.5 rounded-xl text-base font-bold text-purple-200 flex items-center justify-center gap-2 border border-purple-800/50 w-full"
+                      className="btn-secondary px-5 py-3.5 rounded-xl text-base font-bold text-white flex items-center justify-center gap-2 border border-purple-800/50 w-full"
                     >
                       <ImageIcon size={18} className="text-pink-400" /> My Gallery
                     </Link>
                     <Link 
                       to="/pricing" 
                       onClick={closeMenu} 
-                      className="btn-secondary px-5 py-3.5 rounded-xl text-base font-bold text-purple-200 flex items-center justify-center gap-2 border border-purple-800/50 w-full"
+                      className="btn-secondary px-5 py-3.5 rounded-xl text-base font-bold text-white flex items-center justify-center gap-2 border border-purple-800/50 w-full"
                     >
                       <Zap size={18} className="text-amber-400 animate-pulse" /> Buy Credits
                     </Link>
@@ -145,7 +145,7 @@ function App() {
                     <Link 
                       to="/login" 
                       onClick={closeMenu} 
-                      className="btn-secondary px-5 py-3.5 rounded-xl text-base font-bold text-purple-200 flex items-center justify-center gap-2 border border-purple-800/50 w-full"
+                      className="btn-secondary px-5 py-3.5 rounded-xl text-base font-bold text-white flex items-center justify-center gap-2 border border-purple-800/50 w-full bg-purple-950/60"
                     >
                       Login
                     </Link>
